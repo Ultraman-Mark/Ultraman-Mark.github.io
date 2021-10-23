@@ -1,0 +1,673 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/images/icons/favicon-16x16.png?v=2.6.2" type="image/png" sizes="16x16"><link rel="icon" href="/images/icons/favicon-32x32.png?v=2.6.2" type="image/png" sizes="32x32"><meta name="description" content="Spring Cloud项目-业务思想：                           一、优惠券模板微服务                           1.1 优惠券模板创建：       优惠券微服务，优惠券模板分离：  方便创建，一次创建，多次使用 二者使用人群不同：优惠券主要为用户使用，优惠券模板主要为运营人员使用">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【项目】-SpringCloud优惠券系统-1-业务思想">
+<meta property="og:url" content="https://ultraman-mark.github.io/2021/10/23/%E3%80%90%E9%A1%B9%E7%9B%AE%E3%80%91-SpringCloud%E4%BC%98%E6%83%A0%E5%88%B8%E7%B3%BB%E7%BB%9F-%E4%B8%9A%E5%8A%A1%E6%80%9D%E6%83%B3/index.html">
+<meta property="og:site_name" content="博客">
+<meta property="og:description" content="Spring Cloud项目-业务思想：                           一、优惠券模板微服务                           1.1 优惠券模板创建：       优惠券微服务，优惠券模板分离：  方便创建，一次创建，多次使用 二者使用人群不同：优惠券主要为用户使用，优惠券模板主要为运营人员使用">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://gitee.com/ultraman-m78/PicGo/raw/master/coupon/6/6-1-1.jpg">
+<meta property="og:image" content="https://gitee.com/ultraman-m78/PicGo/raw/master/coupon/6/6-1-2.jpg">
+<meta property="og:image" content="https://gitee.com/ultraman-m78/PicGo/raw/master/coupon/6/6-1-3.jpg">
+<meta property="og:image" content="https://gitee.com/ultraman-m78/PicGo/raw/master/coupon/6/6-1-4.jpg">
+<meta property="og:image" content="https://gitee.com/ultraman-m78/PicGo/raw/master/coupon/6/6-2-1.jpg">
+<meta property="og:image" content="https://gitee.com/ultraman-m78/PicGo/raw/master/coupon/6/6-2-2.jpg">
+<meta property="og:image" content="https://gitee.com/ultraman-m78/PicGo/raw/master/coupon/6/6-2-3.jpg">
+<meta property="og:image" content="https://gitee.com/ultraman-m78/PicGo/raw/master/coupon/6/6-2-4.jpg">
+<meta property="og:image" content="https://gitee.com/ultraman-m78/PicGo/raw/master/coupon/6/6-3-1.jpg">
+<meta property="og:image" content="https://gitee.com/ultraman-m78/PicGo/raw/master/coupon/6/6-5-1.jpg">
+<meta property="og:image" content="https://gitee.com/ultraman-m78/PicGo/raw/master/coupon/6/6-5-2.jpg">
+<meta property="article:published_time" content="2021-10-23T09:31:14.000Z">
+<meta property="article:modified_time" content="2021-10-23T09:58:31.016Z">
+<meta property="article:author" content="Peng Yun Lu">
+<meta property="article:tag" content="项目">
+<meta property="article:tag" content="SpringCloud">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gitee.com/ultraman-m78/PicGo/raw/master/coupon/6/6-1-1.jpg"><title>【项目】-SpringCloud优惠券系统-1-业务思想 | 博客</title><link ref="canonical" href="https://ultraman-mark.github.io/2021/10/23/%E3%80%90%E9%A1%B9%E7%9B%AE%E3%80%91-SpringCloud%E4%BC%98%E6%83%A0%E5%88%B8%E7%B3%BB%E7%BB%9F-%E4%B8%9A%E5%8A%A1%E6%80%9D%E6%83%B3/"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.6.2"><script>var Stun = window.Stun || {};
+var CONFIG = {
+  root: '/',
+  algolia: undefined,
+  assistSearch: undefined,
+  fontIcon: {"prompt":{"success":"fas fa-check-circle","info":"fas fa-arrow-circle-right","warning":"fas fa-exclamation-circle","error":"fas fa-times-circle"},"copyBtn":"fas fa-copy"},
+  sidebar: {"offsetTop":"20px","tocMaxDepth":6},
+  header: {"enable":true,"showOnPost":true,"scrollDownIcon":false},
+  postWidget: {"endText":true},
+  nightMode: {"enable":true},
+  back2top: {"enable":true},
+  codeblock: {"style":"default","highlight":"light","wordWrap":false},
+  reward: false,
+  fancybox: false,
+  zoomImage: {"gapAside":"20px"},
+  galleryWaterfall: undefined,
+  lazyload: false,
+  pjax: undefined,
+  externalLink: {"icon":{"enable":true,"name":"fas fa-external-link-alt"}},
+  shortcuts: undefined,
+  prompt: {"copyButton":"复制","copySuccess":"复制成功","copyError":"复制失败"},
+  sourcePath: {"js":"js","css":"css","images":"images"},
+};
+
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/categories/"><span class="header-nav-menu-item__text">分类</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/tags/"><span class="header-nav-menu-item__text">标签</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__text">归档</span></a></div></div><div class="header-nav-search"><span class="header-nav-search__text">搜索</span></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">博客</div><div class="header-banner-info__subtitle"></div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content" id="content"><!-- Just used to judge whether it is an article page--><div id="is-post"></div><div class="post"><header class="post-header"><h1 class="post-title">【项目】-SpringCloud优惠券系统-1-业务思想</h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2021-10-23</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2021-10-23</span></span><span class="post-meta-item post-meta-item--visitors"><span class="post-meta-item__icon"><i class="fas fa-eye"></i></span><span class="post-meta-item__info">阅读次数</span><span class="post-meta-item__value" id="busuanzi_value_page_pv"></span></span></div></header><div class="post-body">
+        <h1 id="Spring-Cloud项目-业务思想："   >
+          <a href="#Spring-Cloud项目-业务思想：" class="heading-link"><i class="fas fa-link"></i></a><a href="#Spring-Cloud项目-业务思想：" class="headerlink" title="Spring Cloud项目-业务思想："></a>Spring Cloud项目-业务思想：</h1>
+      
+        <h2 id="一、优惠券模板微服务"   >
+          <a href="#一、优惠券模板微服务" class="heading-link"><i class="fas fa-link"></i></a><a href="#一、优惠券模板微服务" class="headerlink" title="一、优惠券模板微服务"></a>一、优惠券模板微服务</h2>
+      
+        <h3 id="1-1-优惠券模板创建："   >
+          <a href="#1-1-优惠券模板创建：" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-1-优惠券模板创建：" class="headerlink" title="1.1 优惠券模板创建："></a>1.1 优惠券模板创建：</h3>
+      <p>优惠券微服务，优惠券模板分离：</p>
+<ul>
+<li>方便创建，一次创建，多次使用</li>
+<li>二者使用人群不同：优惠券主要为用户使用，优惠券模板主要为运营人员使用</li>
+</ul>
+<span id="more"></span>
+
+<p><img src="https://gitee.com/ultraman-m78/PicGo/raw/master/coupon/6/6-1-1.jpg"></p>
+<p><img src="https://gitee.com/ultraman-m78/PicGo/raw/master/coupon/6/6-1-2.jpg"></p>
+
+        <h3 id="1-2-给优惠券模板生成”优惠券码“并保存到redis"   >
+          <a href="#1-2-给优惠券模板生成”优惠券码“并保存到redis" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-2-给优惠券模板生成”优惠券码“并保存到redis" class="headerlink" title="1.2 给优惠券模板生成”优惠券码“并保存到redis"></a>1.2 给优惠券模板生成”优惠券码“并保存到redis</h3>
+      <p>优惠券码先在服务实例中预先生成，并放到Redis中，目的：</p>
+<ul>
+<li>简单的解决一致性问题（Set数据结构）</li>
+<li>不会造成优惠券码超发</li>
+<li>不需要重复考虑分发优惠券的配额问题</li>
+</ul>
+<blockquote>
+<p>不好的实现</p>
+</blockquote>
+<p><img src="https://gitee.com/ultraman-m78/PicGo/raw/master/coupon/6/6-1-3.jpg"></p>
+<blockquote>
+<p>好的实现</p>
+</blockquote>
+<p><img src="https://gitee.com/ultraman-m78/PicGo/raw/master/coupon/6/6-1-4.jpg"></p>
+
+        <h3 id="1-3-清理过期的优惠券模板"   >
+          <a href="#1-3-清理过期的优惠券模板" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-3-清理过期的优惠券模板" class="headerlink" title="1.3 清理过期的优惠券模板"></a>1.3 清理过期的优惠券模板</h3>
+      <p><strong>策略一：</strong>template模块自己定期清理策略（定时任务）</p>
+<p><strong>策略二：</strong>使用template模块的其他模块自己校验（策略一存在延迟）</p>
+
+        <h2 id="二、优惠券分发微服务"   >
+          <a href="#二、优惠券分发微服务" class="heading-link"><i class="fas fa-link"></i></a><a href="#二、优惠券分发微服务" class="headerlink" title="二、优惠券分发微服务"></a>二、优惠券分发微服务</h2>
+      
+        <h3 id="2-1-根据用户id和优惠券状态查找用户优惠券"   >
+          <a href="#2-1-根据用户id和优惠券状态查找用户优惠券" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-1-根据用户id和优惠券状态查找用户优惠券" class="headerlink" title="2.1 根据用户id和优惠券状态查找用户优惠券"></a>2.1 根据用户id和优惠券状态查找用户优惠券</h3>
+      <p>说明：</p>
+<blockquote>
+<ol>
+<li>由于不涉及用户系统，用户id不做校验，需要fake</li>
+<li>优惠券状态有三类：可用，已使用，过期（未使用）</li>
+<li>用户数据都存储在Redis中</li>
+<li>除获取用户的优惠券外，还有延迟的过期处理策略</li>
+</ol>
+</blockquote>
+<p><img src="https://gitee.com/ultraman-m78/PicGo/raw/master/coupon/6/6-2-1.jpg"></p>
+<p>耗时操作：</p>
+<p>1.检索用户优惠券（缓存解决）</p>
+<p>2.处理过期优惠券（Kafka异步处理）</p>
+
+        <h3 id="2-2-根据用户id查找当前可以领取的优惠券模板"   >
+          <a href="#2-2-根据用户id查找当前可以领取的优惠券模板" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-2-根据用户id查找当前可以领取的优惠券模板" class="headerlink" title="2.2 根据用户id查找当前可以领取的优惠券模板"></a>2.2 根据用户id查找当前可以领取的优惠券模板</h3>
+      <p>说明：</p>
+<ul>
+<li>优惠券模板从template模块处获取（熔断兜底策略）</li>
+<li>根据优惠券的领取限制，比对当前用户所拥有的优惠券，做出判断</li>
+</ul>
+<p><img src="https://gitee.com/ultraman-m78/PicGo/raw/master/coupon/6/6-2-2.jpg"></p>
+
+        <h3 id="2-3-用户领取优惠券"   >
+          <a href="#2-3-用户领取优惠券" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-3-用户领取优惠券" class="headerlink" title="2.3 用户领取优惠券"></a>2.3 用户领取优惠券</h3>
+      <p>说明：</p>
+<blockquote>
+<ol>
+<li>优惠券模板从template模块处获取（熔断兜底策略）</li>
+<li>根据优惠券的领取限制，比对当前用户所拥有的优惠券，判断是否可以领取</li>
+<li>从Redis中获取优惠券码</li>
+<li>优惠券写入MySQL和Redis中</li>
+</ol>
+</blockquote>
+<p><img src="https://gitee.com/ultraman-m78/PicGo/raw/master/coupon/6/6-2-3.jpg"></p>
+
+        <h3 id="2-4-结算（核销）优惠券"   >
+          <a href="#2-4-结算（核销）优惠券" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-4-结算（核销）优惠券" class="headerlink" title="2.4 结算（核销）优惠券"></a>2.4 结算（核销）优惠券</h3>
+      <p>说明：</p>
+<blockquote>
+<ol>
+<li>校验需要结算的优惠券是否是”合法的（属于用户&amp;&amp;可用）“</li>
+<li>利用settlement模块计算结算数据</li>
+<li>如果是核销，需要写进数据库</li>
+</ol>
+</blockquote>
+<p><img src="https://gitee.com/ultraman-m78/PicGo/raw/master/coupon/6/6-2-4.jpg"></p>
+<blockquote>
+<p>核销和结算不是同一个操作</p>
+</blockquote>
+
+        <h2 id="三、结算微服务"   >
+          <a href="#三、结算微服务" class="heading-link"><i class="fas fa-link"></i></a><a href="#三、结算微服务" class="headerlink" title="三、结算微服务"></a>三、结算微服务</h2>
+      
+        <h3 id="3-1-根据优惠券类型结算优惠券"   >
+          <a href="#3-1-根据优惠券类型结算优惠券" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-1-根据优惠券类型结算优惠券" class="headerlink" title="3.1 根据优惠券类型结算优惠券"></a>3.1 根据优惠券类型结算优惠券</h3>
+      <ul>
+<li>优惠券分类，不同的优惠券有不同的方法</li>
+<li>不同的优惠券有些可以组合，有些不可以组合</li>
+</ul>
+<p><img src="https://gitee.com/ultraman-m78/PicGo/raw/master/coupon/6/6-3-1.jpg"></p>
+
+        <h2 id="四、优惠券系统存储设计"   >
+          <a href="#四、优惠券系统存储设计" class="heading-link"><i class="fas fa-link"></i></a><a href="#四、优惠券系统存储设计" class="headerlink" title="四、优惠券系统存储设计"></a>四、优惠券系统存储设计</h2>
+      
+        <h3 id="4-1-优惠券模板表：coupon-template"   >
+          <a href="#4-1-优惠券模板表：coupon-template" class="heading-link"><i class="fas fa-link"></i></a><a href="#4-1-优惠券模板表：coupon-template" class="headerlink" title="4.1 优惠券模板表：coupon_template"></a>4.1 优惠券模板表：coupon_template</h3>
+      <div class="table-container"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Null</th>
+<th>Key</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>id</td>
+<td>int(11)</td>
+<td>no</td>
+<td>PRI</td>
+<td>主键</td>
+</tr>
+<tr>
+<td>available</td>
+<td>tinyint(1)</td>
+<td>no</td>
+<td></td>
+<td>可用状态</td>
+</tr>
+<tr>
+<td>expired</td>
+<td>tinyint(1)</td>
+<td>no</td>
+<td></td>
+<td>是否过期</td>
+</tr>
+<tr>
+<td>name</td>
+<td>varchar(64)</td>
+<td>no</td>
+<td>UNI</td>
+<td>名称</td>
+</tr>
+<tr>
+<td>logo</td>
+<td>varchar(256)</td>
+<td>no</td>
+<td></td>
+<td>logo</td>
+</tr>
+<tr>
+<td>intro</td>
+<td>varchar(256)</td>
+<td>no</td>
+<td></td>
+<td>描述</td>
+</tr>
+<tr>
+<td>category</td>
+<td>varchar(64)</td>
+<td>no</td>
+<td>MUL</td>
+<td>分类</td>
+</tr>
+<tr>
+<td>product_line</td>
+<td>int(11)</td>
+<td>no</td>
+<td></td>
+<td>生产线</td>
+</tr>
+<tr>
+<td>coupon_count</td>
+<td>int(11)</td>
+<td>no</td>
+<td></td>
+<td>个数</td>
+</tr>
+<tr>
+<td>create_time</td>
+<td>datetime</td>
+<td>no</td>
+<td></td>
+<td>创建时间</td>
+</tr>
+<tr>
+<td>user_id</td>
+<td>bigint(20)</td>
+<td>no</td>
+<td>MUL</td>
+<td>创建模板运营人员id</td>
+</tr>
+<tr>
+<td>template_key</td>
+<td>varchar(128)</td>
+<td>no</td>
+<td></td>
+<td>模板描述</td>
+</tr>
+<tr>
+<td>target</td>
+<td>int(11)</td>
+<td>no</td>
+<td></td>
+<td>扩展</td>
+</tr>
+<tr>
+<td>rule</td>
+<td>varchar(1024)</td>
+<td>no</td>
+<td></td>
+<td>优惠券规则</td>
+</tr>
+</tbody></table></div>
+<p><strong>说明</strong></p>
+<ul>
+<li>name是唯一字段，id是主键</li>
+<li>category和user_id建立了单列索引</li>
+<li>rule是为了方便存储为json字符串</li>
+</ul>
+
+        <h3 id="4-2（用户）优惠券表：coupon"   >
+          <a href="#4-2（用户）优惠券表：coupon" class="heading-link"><i class="fas fa-link"></i></a><a href="#4-2（用户）优惠券表：coupon" class="headerlink" title="4.2（用户）优惠券表：coupon"></a>4.2（用户）优惠券表：coupon</h3>
+      <div class="table-container"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Null</th>
+<th>Key</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>id</td>
+<td>int(11)</td>
+<td>NO</td>
+<td>PRI</td>
+<td>主键</td>
+</tr>
+<tr>
+<td>template_id</td>
+<td>int(11)</td>
+<td>NO</td>
+<td>MUL</td>
+<td>优惠券模板外</td>
+</tr>
+<tr>
+<td>user_id</td>
+<td>bigint(20)</td>
+<td>NO</td>
+<td>MUL</td>
+<td>用户id</td>
+</tr>
+<tr>
+<td>coupon_code</td>
+<td>varchar(64)</td>
+<td>NO</td>
+<td></td>
+<td>优惠券码</td>
+</tr>
+<tr>
+<td>assign_time</td>
+<td>datetime</td>
+<td>NO</td>
+<td></td>
+<td>领取时间</td>
+</tr>
+<tr>
+<td>status</td>
+<td>int(11)</td>
+<td>NO</td>
+<td></td>
+<td>优惠券三类状态</td>
+</tr>
+</tbody></table></div>
+<p>template_id和user_id建立了单列索引</p>
+
+        <h3 id="4-3-优惠券码缓存"   >
+          <a href="#4-3-优惠券码缓存" class="heading-link"><i class="fas fa-link"></i></a><a href="#4-3-优惠券码缓存" class="headerlink" title="4.3 优惠券码缓存"></a>4.3 优惠券码缓存</h3>
+      <p>说明：</p>
+<blockquote>
+<ol>
+<li>优惠券系统使用Redis做缓存</li>
+<li>Key要有意义，且不能与原有的Key冲突</li>
+<li>优惠券码需要永远存在，不设过期时间</li>
+</ol>
+</blockquote>
+<ul>
+<li><p>Key = 前缀（immoc_coupon_template_code_）+后缀(优惠券模板数据表主键)</p>
+</li>
+<li><p>Value类型：list</p>
+</li>
+</ul>
+
+        <h3 id="4-3-优惠券码（用户）缓存"   >
+          <a href="#4-3-优惠券码（用户）缓存" class="heading-link"><i class="fas fa-link"></i></a><a href="#4-3-优惠券码（用户）缓存" class="headerlink" title="4.3 优惠券码（用户）缓存"></a>4.3 优惠券码（用户）缓存</h3>
+      <p>说明：</p>
+<blockquote>
+<ol>
+<li>优惠卷系统使用Redis做缓存</li>
+<li>Key要有意义，且不能与原有的Key冲突</li>
+<li>用户优惠券信息根据状态(未使用，已使用，已过期)分为三类</li>
+<li>用户数据存储在MySQL中，数据量大，不适合长期存储在redis中，需要设计过期时间</li>
+</ol>
+</blockquote>
+<ul>
+<li><p>Key = 前缀（immoc_user_coupon__usable、imooc_user_coupon_used、imooc_user_coupon_expired）+后缀(优惠券模板数据表主键)</p>
+</li>
+<li><p>Value类型：hash(key:优惠券id；value:优惠券信息)</p>
+</li>
+</ul>
+
+        <h2 id="五、架构设计"   >
+          <a href="#五、架构设计" class="heading-link"><i class="fas fa-link"></i></a><a href="#五、架构设计" class="headerlink" title="五、架构设计"></a>五、架构设计</h2>
+      
+        <h3 id="5-1-SpringCloud微服务组件架构"   >
+          <a href="#5-1-SpringCloud微服务组件架构" class="heading-link"><i class="fas fa-link"></i></a><a href="#5-1-SpringCloud微服务组件架构" class="headerlink" title="5.1 SpringCloud微服务组件架构"></a>5.1 SpringCloud微服务组件架构</h3>
+      <p><img src="https://gitee.com/ultraman-m78/PicGo/raw/master/coupon/6/6-5-1.jpg"></p>
+
+        <h3 id="5-2-功能微服务设计"   >
+          <a href="#5-2-功能微服务设计" class="heading-link"><i class="fas fa-link"></i></a><a href="#5-2-功能微服务设计" class="headerlink" title="5.2 功能微服务设计"></a>5.2 功能微服务设计</h3>
+      <p><img src="https://gitee.com/ultraman-m78/PicGo/raw/master/coupon/6/6-5-2.jpg"></p>
+</div><footer class="post-footer"><div class="post-ending ending"><div class="ending__text">------ 本文结束，感谢您的阅读 ------</div></div><div class="post-copyright copyright"><div class="copyright-author"><span class="copyright-author__name">本文作者: </span><span class="copyright-author__value"><a href="https://Ultraman-Mark.github.io">Peng Yun Lu</a></span></div><div class="copyright-link"><span class="copyright-link__name">本文链接: </span><span class="copyright-link__value"><a href="https://ultraman-mark.github.io/2021/10/23/%E3%80%90%E9%A1%B9%E7%9B%AE%E3%80%91-SpringCloud%E4%BC%98%E6%83%A0%E5%88%B8%E7%B3%BB%E7%BB%9F-%E4%B8%9A%E5%8A%A1%E6%80%9D%E6%83%B3/">https://ultraman-mark.github.io/2021/10/23/%E3%80%90%E9%A1%B9%E7%9B%AE%E3%80%91-SpringCloud%E4%BC%98%E6%83%A0%E5%88%B8%E7%B3%BB%E7%BB%9F-%E4%B8%9A%E5%8A%A1%E6%80%9D%E6%83%B3/</a></span></div><div class="copyright-notice"><span class="copyright-notice__name">版权声明: </span><span class="copyright-notice__value">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" rel="external nofollow" target="_blank">BY-NC-SA</a> 许可协议。转载请注明出处！</span></div></div><div class="post-tags"><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="https://ultraman-mark.github.io/tags/%E9%A1%B9%E7%9B%AE/">项目</a></span><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="https://ultraman-mark.github.io/tags/SpringCloud/">SpringCloud</a></span></div><nav class="post-paginator paginator"><div class="paginator-next"><a class="paginator-next__link" href="/2021/10/23/Spring%20Cloud%E9%A1%B9%E7%9B%AE6/"><span class="paginator-prev__text">[ 文章无标题 ]</span><span class="paginator-next__icon"><i class="fas fa-angle-right"></i></span></a></div></nav></footer></div></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><div class="sidebar-nav"><span class="sidebar-nav-toc current">文章目录</span><span class="sidebar-nav-ov">站点概览</span></div><section class="sidebar-toc"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Spring-Cloud%E9%A1%B9%E7%9B%AE-%E4%B8%9A%E5%8A%A1%E6%80%9D%E6%83%B3%EF%BC%9A"><span class="toc-number">1.</span> <span class="toc-text">
+          Spring Cloud项目-业务思想：</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E4%BC%98%E6%83%A0%E5%88%B8%E6%A8%A1%E6%9D%BF%E5%BE%AE%E6%9C%8D%E5%8A%A1"><span class="toc-number">1.1.</span> <span class="toc-text">
+          一、优惠券模板微服务</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-%E4%BC%98%E6%83%A0%E5%88%B8%E6%A8%A1%E6%9D%BF%E5%88%9B%E5%BB%BA%EF%BC%9A"><span class="toc-number">1.1.1.</span> <span class="toc-text">
+          1.1 优惠券模板创建：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-%E7%BB%99%E4%BC%98%E6%83%A0%E5%88%B8%E6%A8%A1%E6%9D%BF%E7%94%9F%E6%88%90%E2%80%9D%E4%BC%98%E6%83%A0%E5%88%B8%E7%A0%81%E2%80%9C%E5%B9%B6%E4%BF%9D%E5%AD%98%E5%88%B0redis"><span class="toc-number">1.1.2.</span> <span class="toc-text">
+          1.2 给优惠券模板生成”优惠券码“并保存到redis</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-%E6%B8%85%E7%90%86%E8%BF%87%E6%9C%9F%E7%9A%84%E4%BC%98%E6%83%A0%E5%88%B8%E6%A8%A1%E6%9D%BF"><span class="toc-number">1.1.3.</span> <span class="toc-text">
+          1.3 清理过期的优惠券模板</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E4%BC%98%E6%83%A0%E5%88%B8%E5%88%86%E5%8F%91%E5%BE%AE%E6%9C%8D%E5%8A%A1"><span class="toc-number">1.2.</span> <span class="toc-text">
+          二、优惠券分发微服务</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-%E6%A0%B9%E6%8D%AE%E7%94%A8%E6%88%B7id%E5%92%8C%E4%BC%98%E6%83%A0%E5%88%B8%E7%8A%B6%E6%80%81%E6%9F%A5%E6%89%BE%E7%94%A8%E6%88%B7%E4%BC%98%E6%83%A0%E5%88%B8"><span class="toc-number">1.2.1.</span> <span class="toc-text">
+          2.1 根据用户id和优惠券状态查找用户优惠券</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-%E6%A0%B9%E6%8D%AE%E7%94%A8%E6%88%B7id%E6%9F%A5%E6%89%BE%E5%BD%93%E5%89%8D%E5%8F%AF%E4%BB%A5%E9%A2%86%E5%8F%96%E7%9A%84%E4%BC%98%E6%83%A0%E5%88%B8%E6%A8%A1%E6%9D%BF"><span class="toc-number">1.2.2.</span> <span class="toc-text">
+          2.2 根据用户id查找当前可以领取的优惠券模板</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-%E7%94%A8%E6%88%B7%E9%A2%86%E5%8F%96%E4%BC%98%E6%83%A0%E5%88%B8"><span class="toc-number">1.2.3.</span> <span class="toc-text">
+          2.3 用户领取优惠券</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-4-%E7%BB%93%E7%AE%97%EF%BC%88%E6%A0%B8%E9%94%80%EF%BC%89%E4%BC%98%E6%83%A0%E5%88%B8"><span class="toc-number">1.2.4.</span> <span class="toc-text">
+          2.4 结算（核销）优惠券</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E7%BB%93%E7%AE%97%E5%BE%AE%E6%9C%8D%E5%8A%A1"><span class="toc-number">1.3.</span> <span class="toc-text">
+          三、结算微服务</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-%E6%A0%B9%E6%8D%AE%E4%BC%98%E6%83%A0%E5%88%B8%E7%B1%BB%E5%9E%8B%E7%BB%93%E7%AE%97%E4%BC%98%E6%83%A0%E5%88%B8"><span class="toc-number">1.3.1.</span> <span class="toc-text">
+          3.1 根据优惠券类型结算优惠券</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E4%BC%98%E6%83%A0%E5%88%B8%E7%B3%BB%E7%BB%9F%E5%AD%98%E5%82%A8%E8%AE%BE%E8%AE%A1"><span class="toc-number">1.4.</span> <span class="toc-text">
+          四、优惠券系统存储设计</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-%E4%BC%98%E6%83%A0%E5%88%B8%E6%A8%A1%E6%9D%BF%E8%A1%A8%EF%BC%9Acoupon-template"><span class="toc-number">1.4.1.</span> <span class="toc-text">
+          4.1 优惠券模板表：coupon_template</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2%EF%BC%88%E7%94%A8%E6%88%B7%EF%BC%89%E4%BC%98%E6%83%A0%E5%88%B8%E8%A1%A8%EF%BC%9Acoupon"><span class="toc-number">1.4.2.</span> <span class="toc-text">
+          4.2（用户）优惠券表：coupon</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-3-%E4%BC%98%E6%83%A0%E5%88%B8%E7%A0%81%E7%BC%93%E5%AD%98"><span class="toc-number">1.4.3.</span> <span class="toc-text">
+          4.3 优惠券码缓存</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-3-%E4%BC%98%E6%83%A0%E5%88%B8%E7%A0%81%EF%BC%88%E7%94%A8%E6%88%B7%EF%BC%89%E7%BC%93%E5%AD%98"><span class="toc-number">1.4.4.</span> <span class="toc-text">
+          4.3 优惠券码（用户）缓存</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%94%E3%80%81%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1"><span class="toc-number">1.5.</span> <span class="toc-text">
+          五、架构设计</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5-1-SpringCloud%E5%BE%AE%E6%9C%8D%E5%8A%A1%E7%BB%84%E4%BB%B6%E6%9E%B6%E6%9E%84"><span class="toc-number">1.5.1.</span> <span class="toc-text">
+          5.1 SpringCloud微服务组件架构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-2-%E5%8A%9F%E8%83%BD%E5%BE%AE%E6%9C%8D%E5%8A%A1%E8%AE%BE%E8%AE%A1"><span class="toc-number">1.5.2.</span> <span class="toc-text">
+          5.2 功能微服务设计</span></a></li></ol></li></ol></li></ol></section><!-- ov = overview--><section class="sidebar-ov hide"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="https://cdn.jsdelivr.net/gh/Ultraman-Mark/map-depot@master/blog/author.png" alt="avatar"></div><p class="sidebar-ov-author__text">每一天都是新的开始</p></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">65</div><div class="sidebar-ov-state-item__name">归档</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--categories" href="/categories/"><div class="sidebar-ov-state-item__count">5</div><div class="sidebar-ov-state-item__name">分类</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--tags" href="/tags/"><div class="sidebar-ov-state-item__count">27</div><div class="sidebar-ov-state-item__name">标签</div></a></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="知识共享许可协议" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section><div class="sidebar-reading"><div class="sidebar-reading-info"><span class="sidebar-reading-info__text">你已阅读了 </span><span class="sidebar-reading-info__num">0</span><span class="sidebar-reading-info__perc">%</span></div><div class="sidebar-reading-line"></div></div></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2021</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>Peng Yun Lu</span></div><div><span>由 <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> 强力驱动</span><span> v5.4.0</span><span class="footer__devider">|</span><span>主题 - <a href="https://github.com/liuyib/hexo-theme-stun/" title="Stun" target="_blank" rel="noopener">Stun</a></span><span> v2.6.2</span></div><div class="busuanzi"><span class="busuanzi-siteuv"><span class="busuanzi-siteuv__icon"><i class="fas fa-user"></i></span><span class="busuanzi-siteuv__info">访问人数</span><span class="busuanzi-siteuv__value" id="busuanzi_value_site_uv"></span></span><span class="busuanzi-sitepv"><span class="busuanzi-siteuv__icon"><i class="fas fa-eye"></i></span><span class="busuanzi-siteuv__info">浏览总量</span><span class="busuanzi-siteuv__value" id="busuanzi_value_site_pv"></span></span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><div class="search-mask"></div><div class="search-popup"><span class="search-close"></span><div class="search-input"><input placeholder="搜索文章（支持多关键词，请用空格分隔）"></div><div class="search-results"></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script>function initSearch() {
+  var isXML = true;
+  var search_path = 'search.json';
+
+  if (!search_path) {
+    search_path = 'search.xml';
+  } else if (/json$/i.test(search_path)) {
+    isXML = false;
+  }
+
+  var path = '/' + search_path;
+  $.ajax({
+    url: path,
+    dataType: isXML ? 'xml' : 'json',
+    async: true,
+    success: function (res) {
+      var datas = isXML ? $('entry', res).map(function () {
+        // 将 XML 转为 JSON
+        return {
+          title: $('title', this).text(),
+          content: $('content', this).text(),
+          url: $('url', this).text()
+        };
+      }).get() : res;
+      var $input = $('.search-input input');
+      var $result = $('.search-results');
+      // 搜索对象（标题、内容）的权重，影响显示顺序
+      var WEIGHT = { title: 100, content: 1 };
+      var searchPost = function () {
+        var searchText = $input.val().toLowerCase().trim();
+        // 根据空白字符分隔关键字
+        var keywords = searchText.split(/[\s]+/);
+        // 搜索结果
+        var matchPosts = [];
+
+        // 有多个关键字时，将原文字整个保存下来
+        if (keywords.length > 1) {
+          keywords.push(searchText);
+        }
+        // 防止未输入字符时搜索
+        if (searchText.length > 0) {
+          datas.forEach(function (data) {
+            var isMatch  = false;
+            // 没有标题的文章使用预设的 i18n 变量代替
+            var title = (data.title && data.title.trim()) || '[ 文章无标题 ]';
+            var titleLower = title && title.toLowerCase();
+            // 删除 HTML 标签 和 所有空白字符
+            var content = data.content && data.content.replace(/<[^>]+>/g, '');
+            var contentLower = content && content.toLowerCase();
+            // 删除重复的 /
+            var postURL = data.url && decodeURI(data.url).replace(/\/{2,}/g, '/');
+            // 标题中匹配到的关键词
+            var titleHitSlice = [];
+            // 内容中匹配到的关键词
+            var contentHitSlice = [];
+
+            keywords.forEach(function (keyword) {
+              /**
+              * 获取匹配的关键词的索引
+              * @param {String} keyword 要匹配的关键字
+              * @param {String} text 原文字
+              * @param {Boolean} caseSensitive 是否区分大小写
+              * @param {Number} weight 匹配对象的权重。权重大的优先显示
+              * @return {Array}
+              */
+              function getIndexByword (word, text, caseSensitive, weight) {
+                if (!word || !text) {
+                  return [];
+                };
+
+                var startIndex = 0; // 每次匹配的开始索引
+                var index = -1;     // 匹配到的索引值
+                var result = [];    // 匹配结果
+
+                if (!caseSensitive) {
+                  word = word.toLowerCase();
+                  text = text.toLowerCase();
+                }
+
+                while((index = text.indexOf(word, startIndex)) !== -1) {
+                  var hasMatch = false;
+                  // 索引位置相同的关键词，保留长度较长的
+                  titleHitSlice.forEach(function (hit) {
+                    if (hit.index === index && hit.word.length < word.length) {
+                      hit.word = word;
+                      hasMatch = true;
+                    }
+                  });
+                  startIndex = index + word.length;
+                  !hasMatch && result.push({ index: index, word: word, weight: weight });
+                }
+                return result;
+              }
+              titleHitSlice = titleHitSlice.concat(getIndexByword(keyword, titleLower, false, WEIGHT.title));
+              contentHitSlice = contentHitSlice.concat(getIndexByword(keyword, contentLower, false, WEIGHT.content));
+            });
+
+            var hitTitle = titleHitSlice.length;
+            var hitContent = contentHitSlice.length;
+
+            if (hitTitle > 0 || hitContent > 0) {
+              isMatch = true;
+            }
+            if (isMatch) {
+              ;[titleHitSlice, contentHitSlice].forEach(function (hit) {
+                // 按照匹配文字的索引的递增顺序排序
+                hit.sort(function (left, right) {
+                  return left.index - right.index;
+                });
+              });
+              /**
+              * 给文本中匹配到的关键词添加标记，从而进行高亮显示
+              * @param {String} text 原文本
+              * @param {Array} hitSlice 匹配项的索引信息
+              * @param {Number} start 开始索引
+              * @param {Number} end 结束索引
+              * @return {String}
+              */
+              function highlightKeyword (text, hitSlice, start, end) {
+                if (!text || !hitSlice || !hitSlice.length) {
+                  return;
+                }
+
+                var result = '';
+                var startIndex = start;
+                var endIndex = end;
+                hitSlice.forEach(function (hit) {
+                  if (hit.index < startIndex) {
+                    return;
+                  }
+
+                  var hitWordEnd = hit.index + hit.word.length;
+                  result += text.slice(startIndex, hit.index);
+                  result += '<b>' + text.slice(hit.index, hitWordEnd) + '</b>';
+                  startIndex = hitWordEnd;
+                });
+                result += text.slice(startIndex, endIndex);
+                return result;
+              }
+
+              var postData = {};
+              // 文章总的搜索权重
+              var postWeight = titleHitSlice.length * WEIGHT.title + contentHitSlice.length * WEIGHT.content;
+              // 标记匹配关键词后的标题
+              var postTitle = highlightKeyword(title, titleHitSlice, 0, title.length) || title;
+              // 标记匹配关键词后的内容
+              var postContent;
+              // 显示内容的长度
+              var SHOW_WORD_LENGTH = 200;
+              // 命中关键词前的字符显示长度
+              var SHOW_WORD_FRONT_LENGTH = 20;
+              var SHOW_WORD_END_LENGTH = SHOW_WORD_LENGTH - SHOW_WORD_FRONT_LENGTH;
+
+              // 截取匹配的第一个字符，前后共 200 个字符来显示
+              if (contentHitSlice.length > 0) {
+                var firstIndex = contentHitSlice[0].index;
+                var start = firstIndex > SHOW_WORD_FRONT_LENGTH ? firstIndex - SHOW_WORD_FRONT_LENGTH : 0;
+                var end = firstIndex + SHOW_WORD_END_LENGTH;
+                postContent = highlightKeyword(content, contentHitSlice, start, end);
+              } else { // 未匹配到内容，直接截取前 200 个字符来显示
+                postContent = content.slice(0, SHOW_WORD_LENGTH);
+              }
+              postData.title = postTitle;
+              postData.content = postContent;
+              postData.url = postURL;
+              postData.weight = postWeight;
+              matchPosts.push(postData);
+            }
+          });
+        }
+
+        var resultInnerHtml = '';
+        if (matchPosts.length) {
+          // 按权重递增的顺序排序，使权重大的优先显示
+          matchPosts.sort(function (left, right) {
+            return right.weight - left.weight;
+          });
+          resultInnerHtml += '<ul>';
+          matchPosts.forEach(function (post) {
+            resultInnerHtml += '<li><a class="search-results-title" href="' + post.url + '">';
+            resultInnerHtml += post.title;
+            resultInnerHtml += '</a><div class="search-results-content">';
+            resultInnerHtml += post.content;
+            resultInnerHtml += '</div></li>';
+          });
+          resultInnerHtml += '</ul>';
+        } else {
+          resultInnerHtml += '<div class="search-results-none"><i class="far fa-meh"></i></div>';
+        }
+        $result.html(resultInnerHtml);
+      };
+      $input.on('input', searchPost);
+      $input.on('keyup', function (e) {
+        if (e.keyCode === Stun.utils.codeToKeyCode('Enter')) {
+          searchPost();
+        }
+      });
+    }
+  });
+}
+
+function closeSearch () {
+  $('body').css({ overflow: 'auto' });
+  $('.search-popup').css({ display: 'none' });
+  $('.search-mask').css({ display: 'none' });
+}
+
+window.addEventListener('DOMContentLoaded', function () {
+  Stun.utils.pjaxReloadLocalSearch = function () {
+    $('.header-nav-search').on('click', function (e) {
+      e.stopPropagation();
+      $('body').css('overflow', 'hidden');
+      $('.search-popup')
+        .velocity('stop')
+        .velocity('transition.expandIn', {
+          duration: 300,
+          complete: function () {
+            $('.search-popup input').focus();
+          }
+        });
+      $('.search-mask')
+        .velocity('stop')
+        .velocity('transition.fadeIn', {
+          duration: 300
+        });
+
+      initSearch();
+    });
+    $('.search-mask, .search-close').on('click', function () {
+      closeSearch();
+    });
+    $(document).on('keydown', function (e) {
+      // Escape <=> 27
+      if (e.keyCode === Stun.utils.codeToKeyCode('Escape')) {
+        closeSearch();
+      }
+    });
+  };
+
+  Stun.utils.pjaxReloadLocalSearch();
+}, false);
+
+function safeOpenUrl(url) {
+  var newTab = window.open();
+  newTab.opener = null;
+  newTab.location = url;
+}
+
+function extSearch(engine) {
+  var engines = {
+    google: 'https://www.google.com/search?q=',
+    bing: 'https://cn.bing.com/search?q=',
+    baidu: 'https://www.baidu.com/s?ie=UTF-8&wd=',
+  };
+  var host = window.location.host;
+  var query = $('.search-input input').val().toLowerCase().trim();
+  var uri = engines[engine] + query + ' site:' + host;
+
+  if (query) {
+    safeOpenUrl(uri);
+  } else {
+    Stun.utils.popAlert('warning', '请输入字符');
+  }
+}
+
+var assistSearchList = window.CONFIG.assistSearch;
+
+if (Array.isArray(assistSearchList)) {
+  assistSearchList.forEach(function (name) {
+    document.querySelector('.search-btns-item--' + name).addEventListener('click', function () {
+      extSearch(name);
+    }, false);
+  });
+}</script><script src="https://cdn.jsdelivr.net/gh/sukkaw/busuanzi@latest/bsz.pure.mini.js" async></script><script src="/js/utils.js?v=2.6.2"></script><script src="/js/stun-boot.js?v=2.6.2"></script><script src="/js/scroll.js?v=2.6.2"></script><script src="/js/header.js?v=2.6.2"></script><script src="/js/sidebar.js?v=2.6.2"></script><script type="application/json" src="/search.json"></script></body></html>
