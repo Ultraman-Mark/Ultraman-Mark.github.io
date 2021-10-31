@@ -28,7 +28,104 @@ var CONFIG = {
   sourcePath: {"js":"js","css":"css","images":"images"},
 };
 
-window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/categories/"><span class="header-nav-menu-item__text">分类</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/tags/"><span class="header-nav-menu-item__text">标签</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__text">归档</span></a></div></div><div class="header-nav-search"><span class="header-nav-search__text">搜索</span></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">博客</div><div class="header-banner-info__subtitle"></div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content content-home" id="content"><section class="postlist"><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2021/10/28/%E3%80%90%E7%89%9B%E5%AE%A2%E7%BD%91%E3%80%91-NC149-kmp%E7%AE%97%E6%B3%95/">【牛客网】-NC149-kmp算法</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2021-10-28</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2021-10-29</span></span></div></header><div class="post-body"><div class="post-excerpt">
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/categories/"><span class="header-nav-menu-item__text">分类</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/tags/"><span class="header-nav-menu-item__text">标签</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__text">归档</span></a></div></div><div class="header-nav-search"><span class="header-nav-search__text">搜索</span></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">博客</div><div class="header-banner-info__subtitle"></div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content content-home" id="content"><section class="postlist"><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2021/10/31/%E3%80%90%E9%A1%B9%E7%9B%AE%E3%80%91-SpringCloud%E4%BC%98%E6%83%A0%E5%88%B8%E7%B3%BB%E7%BB%9F-%E7%BC%96%E7%A0%81%E5%AE%9E%E7%8E%B0/">【项目】-SpringCloud优惠券系统-编码实现</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2021-10-31</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2021-10-31</span></span></div></header><div class="post-body"><div class="post-excerpt">
+        <h1 id="Spring-Cloud项目-编码："   >
+          <a href="#Spring-Cloud项目-编码：" class="heading-link"><i class="fas fa-link"></i></a><a href="#Spring-Cloud项目-编码：" class="headerlink" title="Spring Cloud项目-编码："></a>Spring Cloud项目-编码：</h1>
+      <p>pyl-coupon</p>
+<ul>
+<li>.idea</li>
+<li>coupon-eureka(注册中心)</li>
+<li>coupon-gateway(网关)</li>
+<li>pyl-coupon-service<ul>
+<li>coupon-common(通用模块)</li>
+<li>coupon-template(模块创建功能)</li>
+</ul>
+</li>
+</ul>
+
+        <h2 id="通用功能-coupon"   >
+          <a href="#通用功能-coupon" class="heading-link"><i class="fas fa-link"></i></a><a href="#通用功能-coupon" class="headerlink" title="通用功能-coupon"></a>通用功能-coupon</h2>
+      <p>coupon-common</p>
+<ul>
+<li><p>constant（枚举类）</p>
+<ul>
+<li>CouponCategory(优惠券分类)</li>
+<li>DistributeTarget(分发目标)</li>
+<li>PeriodType(有效期类型)</li>
+<li>ProductLine(产品线)</li>
+<li>Constant(常用常量定义)</li>
+</ul>
+</li>
+<li><p>vo</p>
+<ul>
+<li><p>TemplateRule(优惠券规则)</p>
+</li>
+<li><p>CouponTemplateSDK(微服务之间用的优惠券模板信息定义)</p>
+</li>
+</ul>
+</li>
+</ul>
+
+        <h2 id="模板微服务-template"   >
+          <a href="#模板微服务-template" class="heading-link"><i class="fas fa-link"></i></a><a href="#模板微服务-template" class="headerlink" title="模板微服务-template"></a>模板微服务-template</h2>
+      <p>coupon-template</p>
+<ul>
+<li><p>entity</p>
+<ul>
+<li>CouponTemplate(优惠券模板实体类-数据库)</li>
+</ul>
+</li>
+<li><p>converter(转换器)</p>
+<ul>
+<li>CouponCategoryConverter(优惠券分类)</li>
+<li>ProductLineConverter(产品线)</li>
+<li>DistributeTargetConverter(分发目标)</li>
+</ul>
+</li>
+<li><p>serialization</p>
+<ul>
+<li>CouponTemplateSerialize(优惠券模板实体类自定义序列化器)</li>
+</ul>
+</li>
+<li><p>dao</p>
+<ul>
+<li>CouponTemplateDao(dao定义)</li>
+</ul>
+</li>
+<li><p>vo</p>
+<ul>
+<li>TemplateRequest(优惠券模板创建请求对象)</li>
+</ul>
+</li>
+<li><p>service</p>
+<ul>
+<li><p>IBuildTemplateService(优惠券模板接口定义)</p>
+</li>
+<li><p>IAsyncService(异步服务接口定义)</p>
+<ul>
+<li>asyncConstructCouponByTemplate(CouponTemplate template)：根据模板异步的创建优惠券码</li>
+</ul>
+</li>
+<li><p>ITemplateBaseService(优惠券模板基础服务定义)</p>
+<ul>
+<li><p>buildTemplateInfo(Integer id)：根据优惠券模板id获取优惠券模板信息</p>
+</li>
+<li><p>findAllUsableTemplate()：查找所有可用的优惠券模板</p>
+</li>
+<li><p>findIds2TemplateSDK(Collection<Integer> ids)：</p>
+<p>获取模板 ids 到 CouponTemplateSDK的映射</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>config</p>
+<ul>
+<li>AsyncPoolConfig(异步任务线程池)</li>
+</ul>
+</li>
+</ul>
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2021/10/28/%E3%80%90%E7%89%9B%E5%AE%A2%E7%BD%91%E3%80%91-NC149-kmp%E7%AE%97%E6%B3%95/">【牛客网】-NC149-kmp算法</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2021-10-28</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2021-10-29</span></span></div></header><div class="post-body"><div class="post-excerpt">
         <h2 id="NC149-kmp算法"   >
           <a href="#NC149-kmp算法" class="heading-link"><i class="fas fa-link"></i></a><a href="#NC149-kmp算法" class="headerlink" title="NC149 kmp算法"></a><strong>NC149</strong> <strong>kmp算法</strong></h2>
       <p>给你一个文本串 T ，一个非空模板串 S ，问 T 在 S 中出现了多少次</p>
@@ -563,13 +660,7 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.0"></he
 </div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2021/10/20/%E3%80%90Leetcode%E7%83%AD%E9%A2%98100%E3%80%91-128-%E6%9C%80%E9%95%BF%E8%BF%9E%E7%BB%AD%E5%BA%8F%E5%88%97/">【Leetcode热题100】-128-最长连续序列</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2021-10-20</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2021-10-20</span></span></div></header><div class="post-body"><div class="post-excerpt"><h2 id="「leetcode热题-HOT-100」-128-最长连续序列"   >
           <a href="#「leetcode热题-HOT-100」-128-最长连续序列" class="heading-link"><i class="fas fa-link"></i></a><a href="#「leetcode热题-HOT-100」-128-最长连续序列" class="headerlink" title="「leetcode热题-HOT-100」-128.最长连续序列"></a>「leetcode热题-HOT-100」-128.最长连续序列</h2>
       <p>给定一个未排序的整数数组 nums ，找出数字连续的最长序列（不要求序列元素在原数组中连续）的长度。</p>
-<p>请你设计并实现时间复杂度为 O(n) 的算法解决此问题。</p></div><div class="post-readmore"><a class="post-readmore__link" href="/2021/10/20/%E3%80%90Leetcode%E7%83%AD%E9%A2%98100%E3%80%91-128-%E6%9C%80%E9%95%BF%E8%BF%9E%E7%BB%AD%E5%BA%8F%E5%88%97/"><span class="post-readmore__text">阅读全文</span><span class="post-readmore__icon"><i class="fas fa-long-arrow-alt-right"></i></span></a></div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2021/10/18/%E3%80%90Leetcode%E7%83%AD%E9%A2%98100%E3%80%91-114-%E4%BA%8C%E5%8F%89%E6%A0%91%E5%B1%95%E5%BC%80%E4%B8%BA%E9%93%BE%E8%A1%A8/">【Leetcode热题100】-114-二叉树展开为链表</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2021-10-18</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2021-10-19</span></span></div></header><div class="post-body"><div class="post-excerpt"><h2 id="「leetcode热题-HOT-100」-114-二叉树展开为链表"   >
-          <a href="#「leetcode热题-HOT-100」-114-二叉树展开为链表" class="heading-link"><i class="fas fa-link"></i></a><a href="#「leetcode热题-HOT-100」-114-二叉树展开为链表" class="headerlink" title="「leetcode热题-HOT-100」-114.二叉树展开为链表"></a>「leetcode热题-HOT-100」-114.二叉树展开为链表</h2>
-      <p>给你二叉树的根结点 root ，请你将它展开为一个单链表：</p>
-<ul>
-<li>展开后的单链表应该同样使用 TreeNode ，其中 right 子指针指向链表中下一个结点，而左子指针始终为 null 。</li>
-<li>展开后的单链表应该与二叉树 先序遍历 顺序相同。</li>
-</ul></div><div class="post-readmore"><a class="post-readmore__link" href="/2021/10/18/%E3%80%90Leetcode%E7%83%AD%E9%A2%98100%E3%80%91-114-%E4%BA%8C%E5%8F%89%E6%A0%91%E5%B1%95%E5%BC%80%E4%B8%BA%E9%93%BE%E8%A1%A8/"><span class="post-readmore__text">阅读全文</span><span class="post-readmore__icon"><i class="fas fa-long-arrow-alt-right"></i></span></a></div></div></article></section><nav class="paginator"><div class="paginator-inner"><span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/2/"><i class="fas fa-angle-right"></i></a></div></nav></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><section class="sidebar-toc hide"></section><!-- ov = overview--><section class="sidebar-ov"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="https://cdn.jsdelivr.net/gh/Ultraman-Mark/map-depot@master/blog/author.png" alt="avatar"></div><p class="sidebar-ov-author__text">每一天都是新的开始</p></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">69</div><div class="sidebar-ov-state-item__name">归档</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--categories" href="/categories/"><div class="sidebar-ov-state-item__count">5</div><div class="sidebar-ov-state-item__name">分类</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--tags" href="/tags/"><div class="sidebar-ov-state-item__count">29</div><div class="sidebar-ov-state-item__name">标签</div></a></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="知识共享许可协议" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2021</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>Peng Yun Lu</span></div><div><span>由 <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> 强力驱动</span><span> v5.4.0</span><span class="footer__devider">|</span><span>主题 - <a href="https://github.com/liuyib/hexo-theme-stun/" title="Stun" target="_blank" rel="noopener">Stun</a></span><span> v2.6.2</span></div><div class="busuanzi"><span class="busuanzi-siteuv"><span class="busuanzi-siteuv__icon"><i class="fas fa-user"></i></span><span class="busuanzi-siteuv__info">访问人数</span><span class="busuanzi-siteuv__value" id="busuanzi_value_site_uv"></span></span><span class="busuanzi-sitepv"><span class="busuanzi-siteuv__icon"><i class="fas fa-eye"></i></span><span class="busuanzi-siteuv__info">浏览总量</span><span class="busuanzi-siteuv__value" id="busuanzi_value_site_pv"></span></span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><div class="search-mask"></div><div class="search-popup"><span class="search-close"></span><div class="search-input"><input placeholder="搜索文章（支持多关键词，请用空格分隔）"></div><div class="search-results"></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script>function initSearch() {
+<p>请你设计并实现时间复杂度为 O(n) 的算法解决此问题。</p></div><div class="post-readmore"><a class="post-readmore__link" href="/2021/10/20/%E3%80%90Leetcode%E7%83%AD%E9%A2%98100%E3%80%91-128-%E6%9C%80%E9%95%BF%E8%BF%9E%E7%BB%AD%E5%BA%8F%E5%88%97/"><span class="post-readmore__text">阅读全文</span><span class="post-readmore__icon"><i class="fas fa-long-arrow-alt-right"></i></span></a></div></div></article></section><nav class="paginator"><div class="paginator-inner"><span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/2/"><i class="fas fa-angle-right"></i></a></div></nav></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><section class="sidebar-toc hide"></section><!-- ov = overview--><section class="sidebar-ov"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="https://cdn.jsdelivr.net/gh/Ultraman-Mark/map-depot@master/blog/author.png" alt="avatar"></div><p class="sidebar-ov-author__text">每一天都是新的开始</p></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">70</div><div class="sidebar-ov-state-item__name">归档</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--categories" href="/categories/"><div class="sidebar-ov-state-item__count">5</div><div class="sidebar-ov-state-item__name">分类</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--tags" href="/tags/"><div class="sidebar-ov-state-item__count">29</div><div class="sidebar-ov-state-item__name">标签</div></a></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="知识共享许可协议" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2021</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>Peng Yun Lu</span></div><div><span>由 <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> 强力驱动</span><span> v5.4.0</span><span class="footer__devider">|</span><span>主题 - <a href="https://github.com/liuyib/hexo-theme-stun/" title="Stun" target="_blank" rel="noopener">Stun</a></span><span> v2.6.2</span></div><div class="busuanzi"><span class="busuanzi-siteuv"><span class="busuanzi-siteuv__icon"><i class="fas fa-user"></i></span><span class="busuanzi-siteuv__info">访问人数</span><span class="busuanzi-siteuv__value" id="busuanzi_value_site_uv"></span></span><span class="busuanzi-sitepv"><span class="busuanzi-siteuv__icon"><i class="fas fa-eye"></i></span><span class="busuanzi-siteuv__info">浏览总量</span><span class="busuanzi-siteuv__value" id="busuanzi_value_site_pv"></span></span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><div class="search-mask"></div><div class="search-popup"><span class="search-close"></span><div class="search-input"><input placeholder="搜索文章（支持多关键词，请用空格分隔）"></div><div class="search-results"></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script>function initSearch() {
   var isXML = true;
   var search_path = 'search.json';
 
