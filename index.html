@@ -39,7 +39,7 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.0"></he
 <li>boolean search(String word) 如果字符串 word 在前缀树中，返回 true（即，在检索之前已经插入）；否则，返回 false 。</li>
 <li>boolean startsWith(String prefix) 如果之前已经插入的字符串 word 的前缀之一为 prefix ，返回 true ；否则，返回 false 。</li>
 </ul>
-</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2021/11/14/%E3%80%90%E7%BD%91%E7%BB%9C%E3%80%91-%E4%B8%83%E5%B1%82%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B/">【网络】-七层网络模型</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2021-11-14</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2021-11-14</span></span></div></header><div class="post-body"><div class="post-excerpt">
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2021/11/14/%E3%80%90%E7%BD%91%E7%BB%9C%E3%80%91-%E4%B8%83%E5%B1%82%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B/">【网络】-七层网络模型</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2021-11-14</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2021-11-18</span></span></div></header><div class="post-body"><div class="post-excerpt">
         <h1 id="网络协议"   >
           <a href="#网络协议" class="heading-link"><i class="fas fa-link"></i></a><a href="#网络协议" class="headerlink" title="网络协议"></a>网络协议</h1>
       <p>​     计算机与计算机之间要有统一的连接标准才能够完成相互通信，这个标准被称为互联网协议，而网络就是物理链接介质+互联网协议。按照功能不同，人们将互联网协议从不同维度分为<strong>OSI七层、TCP/IP五层或TCP/IP</strong>四层，如下图所示</p>
@@ -78,13 +78,47 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.0"></he
       
         <h2 id="四、传输层"   >
           <a href="#四、传输层" class="heading-link"><i class="fas fa-link"></i></a><a href="#四、传输层" class="headerlink" title="四、传输层"></a>四、传输层</h2>
-      
-        <h3 id="1-TCP"   >
-          <a href="#1-TCP" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-TCP" class="headerlink" title="1.TCP"></a>1.TCP</h3>
-      
-        <h3 id="2-UDP"   >
-          <a href="#2-UDP" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-UDP" class="headerlink" title="2.UDP"></a>2.UDP</h3>
-      
+      <p><strong>TCP VS UDP</strong></p>
+<div class="table-container"><table>
+<thead>
+<tr>
+<th></th>
+<th>UDP</th>
+<th>TCP</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>是否连接</td>
+<td>无连接</td>
+<td>面向连接</td>
+</tr>
+<tr>
+<td>是否可靠</td>
+<td>不可靠传输，不使用流量控制和拥塞控制</td>
+<td>可靠传输，使用流量控制和拥塞控制</td>
+</tr>
+<tr>
+<td>连接对象</td>
+<td>支持一对一，一对多，多对一</td>
+<td>只支持一对一通信</td>
+</tr>
+<tr>
+<td>传输方式</td>
+<td>面向报文</td>
+<td>面向字节流</td>
+</tr>
+<tr>
+<td>首部开销</td>
+<td>开销小，仅8字节</td>
+<td>首部最小20字节，最大60字节</td>
+</tr>
+<tr>
+<td>使用场景</td>
+<td>实时应用</td>
+<td>可靠传输，文件传输</td>
+</tr>
+</tbody></table></div>
+
         <h3 id="3-三次握手、四次握手"   >
           <a href="#3-三次握手、四次握手" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-三次握手、四次握手" class="headerlink" title="3.三次握手、四次握手"></a>3.三次握手、四次握手</h3>
       
@@ -108,7 +142,9 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.0"></he
 
         <h3 id="2-HTTP"   >
           <a href="#2-HTTP" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-HTTP" class="headerlink" title="2.HTTP"></a>2.HTTP</h3>
-      </div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2021/11/11/%E3%80%90Leetcode%E7%83%AD%E9%A2%98100%E3%80%91-207-%E8%AF%BE%E7%A8%8B%E8%A1%A8/">【Leetcode热题100】-207-课程表</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2021-11-11</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2021-11-13</span></span></div></header><div class="post-body"><div class="post-excerpt"><h2 id="「leetcode热题-HOT-100」-207-课程表"   >
+      <p>URI和URL</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Ultraman-Mark/map-depot@master/network/uri.4j79j5xl2ye0.jpg"></p>
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2021/11/11/%E3%80%90Leetcode%E7%83%AD%E9%A2%98100%E3%80%91-207-%E8%AF%BE%E7%A8%8B%E8%A1%A8/">【Leetcode热题100】-207-课程表</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2021-11-11</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2021-11-19</span></span></div></header><div class="post-body"><div class="post-excerpt"><h2 id="「leetcode热题-HOT-100」-207-课程表"   >
           <a href="#「leetcode热题-HOT-100」-207-课程表" class="heading-link"><i class="fas fa-link"></i></a><a href="#「leetcode热题-HOT-100」-207-课程表" class="headerlink" title="「leetcode热题-HOT-100」-207.课程表"></a>「leetcode热题-HOT-100」-207.课程表</h2>
       <p>你这个学期必须选修 numCourses 门课程，记为 0 到 numCourses - 1 。</p>
 <p>在选修某些课程之前需要一些先修课程。 先修课程按数组 prerequisites 给出，其中 prerequisites[i] = [ai, bi] ，表示如果要学习课程 ai 则 必须 先学习课程  bi 。</p>
