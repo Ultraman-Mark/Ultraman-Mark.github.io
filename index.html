@@ -39,112 +39,9 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.0"></he
 <li>boolean search(String word) 如果字符串 word 在前缀树中，返回 true（即，在检索之前已经插入）；否则，返回 false 。</li>
 <li>boolean startsWith(String prefix) 如果之前已经插入的字符串 word 的前缀之一为 prefix ，返回 true ；否则，返回 false 。</li>
 </ul>
-</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2021/11/14/%E3%80%90%E7%BD%91%E7%BB%9C%E3%80%91-%E4%B8%83%E5%B1%82%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B/">【网络】-七层网络模型</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2021-11-14</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2021-11-18</span></span></div></header><div class="post-body"><div class="post-excerpt">
-        <h1 id="网络协议"   >
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2021/11/14/%E3%80%90%E7%BD%91%E7%BB%9C%E3%80%91-%E4%B8%83%E5%B1%82%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B/">【网络】-七层网络模型</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2021-11-14</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2021-11-20</span></span></div></header><div class="post-body"><div class="post-excerpt"><h1 id="网络协议"   >
           <a href="#网络协议" class="heading-link"><i class="fas fa-link"></i></a><a href="#网络协议" class="headerlink" title="网络协议"></a>网络协议</h1>
-      <p>​     计算机与计算机之间要有统一的连接标准才能够完成相互通信，这个标准被称为互联网协议，而网络就是物理链接介质+互联网协议。按照功能不同，人们将互联网协议从不同维度分为<strong>OSI七层、TCP/IP五层或TCP/IP</strong>四层，如下图所示</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Ultraman-Mark/map-depot@master/network/OSI.jpg"></p>
-
-        <h2 id="一、物理层"   >
-          <a href="#一、物理层" class="heading-link"><i class="fas fa-link"></i></a><a href="#一、物理层" class="headerlink" title="一、物理层"></a>一、物理层</h2>
-      <p>数据单位：bit</p>
-<p>规范：EIA/TIA RS-232，EIA/TIA RS-449，V.35，RJ-45</p>
-<p>​       物理层主要是基于电器特性发送高低电平信号，电平即“电压平台”，指的是电路中某一点电压的高低状态，在网络信号中高电平用数字“1”表示，低电平用数字“0”表示。</p>
-
-        <h2 id="二、数据链路层"   >
-          <a href="#二、数据链路层" class="heading-link"><i class="fas fa-link"></i></a><a href="#二、数据链路层" class="headerlink" title="二、数据链路层"></a>二、数据链路层</h2>
-      <p>数据单位：帧</p>
-<p>协议：SDLC，HDLC，PPP，STP</p>
-
-        <h3 id="1-MAC地址"   >
-          <a href="#1-MAC地址" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-MAC地址" class="headerlink" title="1.MAC地址"></a>1.MAC地址</h3>
-      <p>MAC地址：每块网卡出厂时都被印上一个世界唯一的MAC地址，它是一个长度为48位的二进制数，通常用12位十六进制数表示（前6位是厂商编号，后6位是流水线号）。</p>
-
-        <h3 id="2-以太网"   >
-          <a href="#2-以太网" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-以太网" class="headerlink" title="2.以太网"></a>2.以太网</h3>
-      <p>基于MAC地址的广播方式实现数据传输</p>
-
-        <h3 id="3-Broadcast广播"   >
-          <a href="#3-Broadcast广播" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-Broadcast广播" class="headerlink" title="3.Broadcast广播"></a>3.Broadcast广播</h3>
-      
-        <h2 id="三、数据链路层"   >
-          <a href="#三、数据链路层" class="heading-link"><i class="fas fa-link"></i></a><a href="#三、数据链路层" class="headerlink" title="三、数据链路层"></a>三、数据链路层</h2>
-      
-        <h3 id="1-IP"   >
-          <a href="#1-IP" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-IP" class="headerlink" title="1.IP"></a>1.IP</h3>
-      
-        <h3 id="2-ARP"   >
-          <a href="#2-ARP" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-ARP" class="headerlink" title="2.ARP"></a>2.ARP</h3>
-      
-        <h2 id="四、传输层"   >
-          <a href="#四、传输层" class="heading-link"><i class="fas fa-link"></i></a><a href="#四、传输层" class="headerlink" title="四、传输层"></a>四、传输层</h2>
-      <p><strong>TCP VS UDP</strong></p>
-<div class="table-container"><table>
-<thead>
-<tr>
-<th></th>
-<th>UDP</th>
-<th>TCP</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>是否连接</td>
-<td>无连接</td>
-<td>面向连接</td>
-</tr>
-<tr>
-<td>是否可靠</td>
-<td>不可靠传输，不使用流量控制和拥塞控制</td>
-<td>可靠传输，使用流量控制和拥塞控制</td>
-</tr>
-<tr>
-<td>连接对象</td>
-<td>支持一对一，一对多，多对一</td>
-<td>只支持一对一通信</td>
-</tr>
-<tr>
-<td>传输方式</td>
-<td>面向报文</td>
-<td>面向字节流</td>
-</tr>
-<tr>
-<td>首部开销</td>
-<td>开销小，仅8字节</td>
-<td>首部最小20字节，最大60字节</td>
-</tr>
-<tr>
-<td>使用场景</td>
-<td>实时应用</td>
-<td>可靠传输，文件传输</td>
-</tr>
-</tbody></table></div>
-
-        <h3 id="3-三次握手、四次握手"   >
-          <a href="#3-三次握手、四次握手" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-三次握手、四次握手" class="headerlink" title="3.三次握手、四次握手"></a>3.三次握手、四次握手</h3>
-      
-        <h2 id="五、应用层"   >
-          <a href="#五、应用层" class="heading-link"><i class="fas fa-link"></i></a><a href="#五、应用层" class="headerlink" title="五、应用层"></a>五、应用层</h2>
-      
-        <h3 id="1-DNS协议"   >
-          <a href="#1-DNS协议" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-DNS协议" class="headerlink" title="1.DNS协议"></a>1.DNS协议</h3>
-      <p>将人类可读的<strong>域名</strong>转换成机器可读的<strong>IP地址</strong></p>
-<ul>
-<li><strong>IP 地址</strong>：一长串能够唯一地标记网络上的计算机的数字</li>
-<li><strong>域名</strong>：又称网域，是由一串用点分隔的名字组成的 Internet 上某一台计算机或计算机组的名称，用于在数据传输时对计算机的定位标识（有时也指地理位置）比如 <code>www.baidu.com</code></li>
-</ul>
-<p><strong>域名详解</strong></p>
-<p><img src="https://cdn.jsdelivr.net/gh/Ultraman-Mark/map-depot@master/network/yuming.jpg"></p>
-<ol>
-<li><strong>顶级域名：</strong>就是 <code>.com</code>，<code>.net</code>，<code>.edu</code>，<code>.org</code>；<code>.cn</code></li>
-<li><strong>二级域名：</strong>一般是指域名注册人上使用的网络名称，三级域名属于二级域名的子目录</li>
-<li><strong>根域名：理论上，</strong>所有域名的查询都必须先查询根域名<strong>，因为只有根域名才能告诉你，某个顶级域名由哪台服务器管理。事实上也确实如此，</strong>ICANN 维护着一张列表（根域名列表），里面记载着顶级域名和对应的托管商。但是你可能在上图上没看见。</li>
-</ol>
-
-        <h3 id="2-HTTP"   >
-          <a href="#2-HTTP" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-HTTP" class="headerlink" title="2.HTTP"></a>2.HTTP</h3>
-      <p>URI和URL</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Ultraman-Mark/map-depot@master/network/uri.4j79j5xl2ye0.jpg"></p>
-</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2021/11/11/%E3%80%90Leetcode%E7%83%AD%E9%A2%98100%E3%80%91-207-%E8%AF%BE%E7%A8%8B%E8%A1%A8/">【Leetcode热题100】-207-课程表</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2021-11-11</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2021-11-20</span></span></div></header><div class="post-body"><div class="post-excerpt"><h2 id="「leetcode热题-HOT-100」-207-课程表"   >
+      <p>​     计算机与计算机之间要有统一的连接标准才能够完成相互通信，这个标准被称为互联网协议，而网络就是物理链接介质+互联网协议。按照功能不同，人们将互联网协议从不同维度分为<strong>OSI七层、TCP/IP五层或TCP/IP</strong>四层，如下图所示</p></div><div class="post-readmore"><a class="post-readmore__link" href="/2021/11/14/%E3%80%90%E7%BD%91%E7%BB%9C%E3%80%91-%E4%B8%83%E5%B1%82%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B/"><span class="post-readmore__text">阅读全文</span><span class="post-readmore__icon"><i class="fas fa-long-arrow-alt-right"></i></span></a></div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2021/11/11/%E3%80%90Leetcode%E7%83%AD%E9%A2%98100%E3%80%91-207-%E8%AF%BE%E7%A8%8B%E8%A1%A8/">【Leetcode热题100】-207-课程表</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2021-11-11</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2021-11-20</span></span></div></header><div class="post-body"><div class="post-excerpt"><h2 id="「leetcode热题-HOT-100」-207-课程表"   >
           <a href="#「leetcode热题-HOT-100」-207-课程表" class="heading-link"><i class="fas fa-link"></i></a><a href="#「leetcode热题-HOT-100」-207-课程表" class="headerlink" title="「leetcode热题-HOT-100」-207.课程表"></a>「leetcode热题-HOT-100」-207.课程表</h2>
       <p>你这个学期必须选修 numCourses 门课程，记为 0 到 numCourses - 1 。</p>
 <p>在选修某些课程之前需要一些先修课程。 先修课程按数组 prerequisites 给出，其中 prerequisites[i] = [ai, bi] ，表示如果要学习课程 ai 则 必须 先学习课程  bi 。</p>
@@ -273,7 +170,7 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.0"></he
 </ul>
 </li>
 </ul>
-</div></div></article></section><nav class="paginator"><div class="paginator-inner"><span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/2/"><i class="fas fa-angle-right"></i></a></div></nav></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><section class="sidebar-toc hide"></section><!-- ov = overview--><section class="sidebar-ov"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="https://cdn.jsdelivr.net/gh/Ultraman-Mark/map-depot@master/blog/author.png" alt="avatar"></div><p class="sidebar-ov-author__text">每一天都是新的开始</p></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">79</div><div class="sidebar-ov-state-item__name">归档</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--categories" href="/categories/"><div class="sidebar-ov-state-item__count">6</div><div class="sidebar-ov-state-item__name">分类</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--tags" href="/tags/"><div class="sidebar-ov-state-item__count">32</div><div class="sidebar-ov-state-item__name">标签</div></a></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="知识共享许可协议" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2021</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>Peng Yun Lu</span></div><div><span>由 <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> 强力驱动</span><span> v5.4.0</span><span class="footer__devider">|</span><span>主题 - <a href="https://github.com/liuyib/hexo-theme-stun/" title="Stun" target="_blank" rel="noopener">Stun</a></span><span> v2.6.2</span></div><div class="busuanzi"><span class="busuanzi-siteuv"><span class="busuanzi-siteuv__icon"><i class="fas fa-user"></i></span><span class="busuanzi-siteuv__info">访问人数</span><span class="busuanzi-siteuv__value" id="busuanzi_value_site_uv"></span></span><span class="busuanzi-sitepv"><span class="busuanzi-siteuv__icon"><i class="fas fa-eye"></i></span><span class="busuanzi-siteuv__info">浏览总量</span><span class="busuanzi-siteuv__value" id="busuanzi_value_site_pv"></span></span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><div class="search-mask"></div><div class="search-popup"><span class="search-close"></span><div class="search-input"><input placeholder="搜索文章（支持多关键词，请用空格分隔）"></div><div class="search-results"></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script>function initSearch() {
+</div></div></article></section><nav class="paginator"><div class="paginator-inner"><span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/2/"><i class="fas fa-angle-right"></i></a></div></nav></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><section class="sidebar-toc hide"></section><!-- ov = overview--><section class="sidebar-ov"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="https://cdn.jsdelivr.net/gh/Ultraman-Mark/map-depot@master/blog/author.png" alt="avatar"></div><p class="sidebar-ov-author__text">每一天都是新的开始</p></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">79</div><div class="sidebar-ov-state-item__name">归档</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--categories" href="/categories/"><div class="sidebar-ov-state-item__count">6</div><div class="sidebar-ov-state-item__name">分类</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--tags" href="/tags/"><div class="sidebar-ov-state-item__count">31</div><div class="sidebar-ov-state-item__name">标签</div></a></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="知识共享许可协议" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2021</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>Peng Yun Lu</span></div><div><span>由 <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> 强力驱动</span><span> v5.4.0</span><span class="footer__devider">|</span><span>主题 - <a href="https://github.com/liuyib/hexo-theme-stun/" title="Stun" target="_blank" rel="noopener">Stun</a></span><span> v2.6.2</span></div><div class="busuanzi"><span class="busuanzi-siteuv"><span class="busuanzi-siteuv__icon"><i class="fas fa-user"></i></span><span class="busuanzi-siteuv__info">访问人数</span><span class="busuanzi-siteuv__value" id="busuanzi_value_site_uv"></span></span><span class="busuanzi-sitepv"><span class="busuanzi-siteuv__icon"><i class="fas fa-eye"></i></span><span class="busuanzi-siteuv__info">浏览总量</span><span class="busuanzi-siteuv__value" id="busuanzi_value_site_pv"></span></span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><div class="search-mask"></div><div class="search-popup"><span class="search-close"></span><div class="search-input"><input placeholder="搜索文章（支持多关键词，请用空格分隔）"></div><div class="search-results"></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script>function initSearch() {
   var isXML = true;
   var search_path = 'search.json';
 
