@@ -28,7 +28,338 @@ var CONFIG = {
   sourcePath: {"js":"js","css":"css","images":"images"},
 };
 
-window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/categories/"><span class="header-nav-menu-item__text">分类</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/tags/"><span class="header-nav-menu-item__text">标签</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__text">归档</span></a></div></div><div class="header-nav-search"><span class="header-nav-search__text">搜索</span></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">博客</div><div class="header-banner-info__subtitle"></div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content content-home" id="content"><section class="postlist"><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2021/10/22/%E3%80%90Leetcode%E7%83%AD%E9%A2%98100%E3%80%91-142-%E7%8E%AF%E5%BD%A2%E9%93%BE%E8%A1%A8II/">【Leetcode热题100】-142-环形链表II</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2021-10-22</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2021-11-02</span></span></div></header><div class="post-body"><div class="post-excerpt"><h2 id="「leetcode热题-HOT-100」-142-环形链表II"   >
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/categories/"><span class="header-nav-menu-item__text">分类</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/tags/"><span class="header-nav-menu-item__text">标签</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__text">归档</span></a></div></div><div class="header-nav-search"><span class="header-nav-search__text">搜索</span></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">博客</div><div class="header-banner-info__subtitle"></div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content content-home" id="content"><section class="postlist"><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2021/10/23/Spring%20Cloud%E9%A1%B9%E7%9B%AE6/">[ 文章无标题 ]</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2021-10-23</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2021-10-23</span></span></div></header><div class="post-body"><div class="post-excerpt">
+        <h1 id="Spring-Cloud-项目-业务思想："   >
+          <a href="#Spring-Cloud-项目-业务思想：" class="heading-link"><i class="fas fa-link"></i></a><a href="#Spring-Cloud-项目-业务思想：" class="headerlink" title="Spring Cloud-项目-业务思想："></a>Spring Cloud-项目-业务思想：</h1>
+      
+        <h2 id="优惠券模板微服务"   >
+          <a href="#优惠券模板微服务" class="heading-link"><i class="fas fa-link"></i></a><a href="#优惠券模板微服务" class="headerlink" title="优惠券模板微服务"></a>优惠券模板微服务</h2>
+      
+        <h3 id="优惠券模板创建："   >
+          <a href="#优惠券模板创建：" class="heading-link"><i class="fas fa-link"></i></a><a href="#优惠券模板创建：" class="headerlink" title="优惠券模板创建："></a>优惠券模板创建：</h3>
+      <p>优惠券微服务，优惠券模板分离：</p>
+<ul>
+<li><p>方便创建，一次创建，多次使用</p>
+</li>
+<li><p>二者使用人群不同：优惠券主要为用户使用，优惠券模板主要为运营人员使用</p>
+</li>
+</ul>
+<p><img src="C:\Users\22786\Pictures\Coupon\6-1-1.jpg" alt="6-1-1"></p>
+<p><img src="C:\Users\22786\Pictures\Coupon\6-1-2.jpg" alt="6-1-2"></p>
+
+        <h3 id="给优惠券模板生成”优惠券码“并保存到redis"   >
+          <a href="#给优惠券模板生成”优惠券码“并保存到redis" class="heading-link"><i class="fas fa-link"></i></a><a href="#给优惠券模板生成”优惠券码“并保存到redis" class="headerlink" title="给优惠券模板生成”优惠券码“并保存到redis"></a>给优惠券模板生成”优惠券码“并保存到redis</h3>
+      <p>优惠券码先在服务实例中预先生成，并放到Redis中，目的：</p>
+<ul>
+<li>简单的解决一致性问题（Set数据结构）</li>
+<li>不会造成优惠券码超发</li>
+<li>不需要重复考虑分发优惠券的配额问题</li>
+</ul>
+<blockquote>
+<p>不好的实现</p>
+</blockquote>
+<p><img src="C:\Users\22786\Pictures\Coupon\6-1-3.jpg" alt="6-1-3"></p>
+<blockquote>
+<p>好的实现</p>
+</blockquote>
+<p><img src="C:\Users\22786\Pictures\Coupon\6-1-4.jpg" alt="6-1-4"></p>
+
+        <h3 id="清理过期的优惠券模板"   >
+          <a href="#清理过期的优惠券模板" class="heading-link"><i class="fas fa-link"></i></a><a href="#清理过期的优惠券模板" class="headerlink" title="清理过期的优惠券模板"></a>清理过期的优惠券模板</h3>
+      <p><strong>策略一：</strong>template模块自己定期清理策略（定时任务）</p>
+<p><strong>策略二：</strong>使用template模块的其他模块自己校验（策略一存在延迟）</p>
+
+        <h2 id="优惠券分发微服务"   >
+          <a href="#优惠券分发微服务" class="heading-link"><i class="fas fa-link"></i></a><a href="#优惠券分发微服务" class="headerlink" title="优惠券分发微服务"></a>优惠券分发微服务</h2>
+      
+        <h3 id="根据用户id和优惠券状态查找用户优惠券"   >
+          <a href="#根据用户id和优惠券状态查找用户优惠券" class="heading-link"><i class="fas fa-link"></i></a><a href="#根据用户id和优惠券状态查找用户优惠券" class="headerlink" title="根据用户id和优惠券状态查找用户优惠券"></a>根据用户id和优惠券状态查找用户优惠券</h3>
+      <p>说明：</p>
+<blockquote>
+<ol>
+<li>由于不涉及用户系统，用户id不做校验，需要fake</li>
+<li>优惠券状态有三类：可用，已使用，过期（未使用）</li>
+<li>用户数据都存储在Redis中</li>
+<li>除获取用户的优惠券外，还有延迟的过期处理策略</li>
+</ol>
+</blockquote>
+<p><img src="C:\Users\22786\Pictures\Coupon\6-1-5.jpg" alt="6-1-5"></p>
+<p>耗时操作：</p>
+<p>1.检索用户优惠券（缓存解决）</p>
+<p>2.处理过期优惠券（Kafka异步处理）</p>
+
+        <h3 id="根据用户id查找当前可以领取的优惠券模板"   >
+          <a href="#根据用户id查找当前可以领取的优惠券模板" class="heading-link"><i class="fas fa-link"></i></a><a href="#根据用户id查找当前可以领取的优惠券模板" class="headerlink" title="根据用户id查找当前可以领取的优惠券模板"></a>根据用户id查找当前可以领取的优惠券模板</h3>
+      <p>说明：</p>
+<ul>
+<li>优惠券模板从template模块处获取（熔断兜底策略）</li>
+<li>根据优惠券的领取限制，比对当前用户所拥有的优惠券，做出判断</li>
+</ul>
+<p><img src="C:\Users\22786\Pictures\Coupon\6-2-2.jpg" alt="6-2-2"></p>
+
+        <h3 id="用户领取优惠券"   >
+          <a href="#用户领取优惠券" class="heading-link"><i class="fas fa-link"></i></a><a href="#用户领取优惠券" class="headerlink" title="用户领取优惠券"></a>用户领取优惠券</h3>
+      <p>说明：</p>
+<blockquote>
+<ol>
+<li>优惠券模板从template模块处获取（熔断兜底策略）</li>
+<li>根据优惠券的领取限制，比对当前用户所拥有的优惠券，判断是否可以领取</li>
+<li>从Redis中获取优惠券码</li>
+<li>优惠券写入MySQL和Redis中</li>
+</ol>
+</blockquote>
+<p><img src="C:\Users\22786\Pictures\Coupon\6-2-3.jpg" alt="6-2-3"></p>
+
+        <h3 id="结算（核销）优惠券"   >
+          <a href="#结算（核销）优惠券" class="heading-link"><i class="fas fa-link"></i></a><a href="#结算（核销）优惠券" class="headerlink" title="结算（核销）优惠券"></a>结算（核销）优惠券</h3>
+      <p>说明：</p>
+<blockquote>
+<ol>
+<li>校验需要结算的优惠券是否是”合法的（属于用户&amp;&amp;可用）“</li>
+<li>利用settlement模块计算结算数据</li>
+<li>如果是核销，需要写进数据库</li>
+</ol>
+</blockquote>
+<p><img src="C:\Users\22786\Pictures\Coupon\6-2-4.jpg" alt="6-2-4"></p>
+<blockquote>
+<p>核销和结算不是同一个操作</p>
+</blockquote>
+
+        <h2 id="结算微服务"   >
+          <a href="#结算微服务" class="heading-link"><i class="fas fa-link"></i></a><a href="#结算微服务" class="headerlink" title="结算微服务"></a>结算微服务</h2>
+      
+        <h3 id="根据优惠券类型结算优惠券"   >
+          <a href="#根据优惠券类型结算优惠券" class="heading-link"><i class="fas fa-link"></i></a><a href="#根据优惠券类型结算优惠券" class="headerlink" title="根据优惠券类型结算优惠券"></a>根据优惠券类型结算优惠券</h3>
+      <ul>
+<li>优惠券分类，不同的优惠券有不同的方法</li>
+<li>不同的优惠券有些可以组合，有些不可以组合</li>
+</ul>
+<p><img src="C:\Users\22786\Pictures\Coupon\6-3-1.jpg" alt="6-3-1"></p>
+
+        <h2 id="优惠券系统存储设计"   >
+          <a href="#优惠券系统存储设计" class="heading-link"><i class="fas fa-link"></i></a><a href="#优惠券系统存储设计" class="headerlink" title="优惠券系统存储设计"></a>优惠券系统存储设计</h2>
+      
+        <h3 id="优惠券模板表：coupon-template"   >
+          <a href="#优惠券模板表：coupon-template" class="heading-link"><i class="fas fa-link"></i></a><a href="#优惠券模板表：coupon-template" class="headerlink" title="优惠券模板表：coupon_template"></a>优惠券模板表：coupon_template</h3>
+      <div class="table-container"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Null</th>
+<th>Key</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>id</td>
+<td>int(11)</td>
+<td>no</td>
+<td>PRI</td>
+<td>主键</td>
+</tr>
+<tr>
+<td>available</td>
+<td>tinyint(1)</td>
+<td>no</td>
+<td></td>
+<td>可用状态</td>
+</tr>
+<tr>
+<td>expired</td>
+<td>tinyint(1)</td>
+<td>no</td>
+<td></td>
+<td>是否过期</td>
+</tr>
+<tr>
+<td>name</td>
+<td>varchar(64)</td>
+<td>no</td>
+<td>UNI</td>
+<td>名称</td>
+</tr>
+<tr>
+<td>logo</td>
+<td>varchar(256)</td>
+<td>no</td>
+<td></td>
+<td>logo</td>
+</tr>
+<tr>
+<td>intro</td>
+<td>varchar(256)</td>
+<td>no</td>
+<td></td>
+<td>描述</td>
+</tr>
+<tr>
+<td>category</td>
+<td>varchar(64)</td>
+<td>no</td>
+<td>MUL</td>
+<td>分类</td>
+</tr>
+<tr>
+<td>product_line</td>
+<td>int(11)</td>
+<td>no</td>
+<td></td>
+<td>生产线</td>
+</tr>
+<tr>
+<td>coupon_count</td>
+<td>int(11)</td>
+<td>no</td>
+<td></td>
+<td>个数</td>
+</tr>
+<tr>
+<td>create_time</td>
+<td>datetime</td>
+<td>no</td>
+<td></td>
+<td>创建时间</td>
+</tr>
+<tr>
+<td>user_id</td>
+<td>bigint(20)</td>
+<td>no</td>
+<td>MUL</td>
+<td>创建模板运营人员id</td>
+</tr>
+<tr>
+<td>template_key</td>
+<td>varchar(128)</td>
+<td>no</td>
+<td></td>
+<td>模板描述</td>
+</tr>
+<tr>
+<td>target</td>
+<td>int(11)</td>
+<td>no</td>
+<td></td>
+<td>扩展</td>
+</tr>
+<tr>
+<td>rule</td>
+<td>varchar(1024)</td>
+<td>no</td>
+<td></td>
+<td>优惠券规则</td>
+</tr>
+</tbody></table></div>
+<p><strong>说明</strong></p>
+<ul>
+<li>name是唯一字段，id是主键</li>
+<li>category和user_id建立了单列索引</li>
+<li>rule是为了方便存储为json字符串</li>
+</ul>
+
+        <h3 id="（用户）优惠券表：coupon"   >
+          <a href="#（用户）优惠券表：coupon" class="heading-link"><i class="fas fa-link"></i></a><a href="#（用户）优惠券表：coupon" class="headerlink" title="（用户）优惠券表：coupon"></a>（用户）优惠券表：coupon</h3>
+      <div class="table-container"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Null</th>
+<th>Key</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>id</td>
+<td>int(11)</td>
+<td>NO</td>
+<td>PRI</td>
+<td>主键</td>
+</tr>
+<tr>
+<td>template_id</td>
+<td>int(11)</td>
+<td>NO</td>
+<td>MUL</td>
+<td>优惠券模板外</td>
+</tr>
+<tr>
+<td>user_id</td>
+<td>bigint(20)</td>
+<td>NO</td>
+<td>MUL</td>
+<td>用户id</td>
+</tr>
+<tr>
+<td>coupon_code</td>
+<td>varchar(64)</td>
+<td>NO</td>
+<td></td>
+<td>优惠券码</td>
+</tr>
+<tr>
+<td>assign_time</td>
+<td>datetime</td>
+<td>NO</td>
+<td></td>
+<td>领取时间</td>
+</tr>
+<tr>
+<td>status</td>
+<td>int(11)</td>
+<td>NO</td>
+<td></td>
+<td>优惠券三类状态</td>
+</tr>
+</tbody></table></div>
+<p>template_id和user_id建立了单列索引</p>
+
+        <h3 id="优惠券码缓存"   >
+          <a href="#优惠券码缓存" class="heading-link"><i class="fas fa-link"></i></a><a href="#优惠券码缓存" class="headerlink" title="优惠券码缓存"></a>优惠券码缓存</h3>
+      <p>说明：</p>
+<blockquote>
+<ol>
+<li>优惠券系统使用Redis做缓存</li>
+<li>Key要有意义，且不能与原有的Key冲突</li>
+<li>优惠券码需要永远存在，不设过期时间</li>
+</ol>
+</blockquote>
+<ul>
+<li><p>Key = 前缀（immoc_coupon_template_code_）+后缀(优惠券模板数据表主键)</p>
+</li>
+<li><p>Value类型：list</p>
+</li>
+</ul>
+
+        <h3 id="优惠券码（用户）缓存"   >
+          <a href="#优惠券码（用户）缓存" class="heading-link"><i class="fas fa-link"></i></a><a href="#优惠券码（用户）缓存" class="headerlink" title="优惠券码（用户）缓存"></a>优惠券码（用户）缓存</h3>
+      <p>说明：</p>
+<blockquote>
+<ol>
+<li>优惠卷系统使用Redis做缓存</li>
+<li>Key要有意义，且不能与原有的Key冲突</li>
+<li>用户优惠券信息根据状态(未使用，已使用，已过期)分为三类</li>
+<li>用户数据存储在MySQL中，数据量大，不适合长期存储在redis中，需要设计过期时间</li>
+</ol>
+</blockquote>
+<ul>
+<li><p>Key = 前缀（immoc_user_coupon__usable、imooc_user_coupon_used、imooc_user_coupon_expired）+后缀(优惠券模板数据表主键)</p>
+</li>
+<li><p>Value类型：hash(key:优惠券id；value:优惠券信息)</p>
+</li>
+</ul>
+
+        <h2 id="架构设计"   >
+          <a href="#架构设计" class="heading-link"><i class="fas fa-link"></i></a><a href="#架构设计" class="headerlink" title="架构设计"></a>架构设计</h2>
+      
+        <h3 id="SpringCloud微服务组件架构"   >
+          <a href="#SpringCloud微服务组件架构" class="heading-link"><i class="fas fa-link"></i></a><a href="#SpringCloud微服务组件架构" class="headerlink" title="SpringCloud微服务组件架构"></a>SpringCloud微服务组件架构</h3>
+      <p><img src="C:\Users\22786\Pictures\Coupon\6-5-1.jpg" alt="6-5-1"></p>
+
+        <h3 id="功能微服务设计"   >
+          <a href="#功能微服务设计" class="heading-link"><i class="fas fa-link"></i></a><a href="#功能微服务设计" class="headerlink" title="功能微服务设计"></a>功能微服务设计</h3>
+      <p><img src="C:\Users\22786\Pictures\Coupon\6-5-2.jpg" alt="6-5-2"></p>
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2021/10/22/%E3%80%90Leetcode%E7%83%AD%E9%A2%98100%E3%80%91-142-%E7%8E%AF%E5%BD%A2%E9%93%BE%E8%A1%A8II/">【Leetcode热题100】-142-环形链表II</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2021-10-22</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2021-11-02</span></span></div></header><div class="post-body"><div class="post-excerpt"><h2 id="「leetcode热题-HOT-100」-142-环形链表II"   >
           <a href="#「leetcode热题-HOT-100」-142-环形链表II" class="heading-link"><i class="fas fa-link"></i></a><a href="#「leetcode热题-HOT-100」-142-环形链表II" class="headerlink" title="「leetcode热题-HOT-100」-142.环形链表II"></a>「leetcode热题-HOT-100」-142.环形链表II</h2>
       <p>给定一个链表，返回链表开始入环的第一个节点。 如果链表无环，则返回 null。</p>
 <p>为了表示给定链表中的环，我们使用整数 pos 来表示链表尾连接到链表中的位置（索引从 0 开始）。 如果 pos 是 -1，则在该链表中没有环。注意，pos 仅仅是用于标识环的情况，并不会作为参数传递到函数中。</p>
@@ -100,9 +431,7 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.0"></he
 </ul></div><div class="post-readmore"><a class="post-readmore__link" href="/2021/10/12/%E3%80%90Leetcode%E7%83%AD%E9%A2%98100%E3%80%91-98-%E9%AA%8C%E8%AF%81%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91/"><span class="post-readmore__text">阅读全文</span><span class="post-readmore__icon"><i class="fas fa-long-arrow-alt-right"></i></span></a></div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2021/10/11/%E3%80%90Leetcode%E7%83%AD%E9%A2%98100%E3%80%91-%E9%94%99%E9%A2%98%E9%9B%86%E5%90%88/">【Leetcode热题100】-错题集合</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2021-10-11</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2021-12-04</span></span></div></header><div class="post-body"><div class="post-excerpt"><h2 id="错题集合"   >
           <a href="#错题集合" class="heading-link"><i class="fas fa-link"></i></a><a href="#错题集合" class="headerlink" title="错题集合"></a>错题集合</h2>
       <p><a href="https://ultraman-mark.github.io/2021/10/10/%E3%80%90Leetcode%E7%83%AD%E9%A2%98100%E3%80%91-96-%E4%B8%8D%E5%90%8C%E7%9A%84%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91/">leetcode-96. 不同的二叉搜索树</a></p>
-<p>给你一个整数 <code>n</code> ，求恰由 <code>n</code> 个节点组成且节点值从 <code>1</code> 到 <code>n</code> 互不相同的 <strong>二叉搜索树</strong> 有多少种？返回满足题意的二叉搜索树的种数。</p></div><div class="post-readmore"><a class="post-readmore__link" href="/2021/10/11/%E3%80%90Leetcode%E7%83%AD%E9%A2%98100%E3%80%91-%E9%94%99%E9%A2%98%E9%9B%86%E5%90%88/"><span class="post-readmore__text">阅读全文</span><span class="post-readmore__icon"><i class="fas fa-long-arrow-alt-right"></i></span></a></div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2021/10/10/%E3%80%90Leetcode%E7%83%AD%E9%A2%98100%E3%80%91-96-%E4%B8%8D%E5%90%8C%E7%9A%84%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91/">【Leetcode热题100】-96-不同的二叉搜索树</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2021-10-10</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2021-10-12</span></span></div></header><div class="post-body"><div class="post-excerpt"><h2 id="「leetcode热题-HOT-100」-96-不同的二叉搜索树"   >
-          <a href="#「leetcode热题-HOT-100」-96-不同的二叉搜索树" class="heading-link"><i class="fas fa-link"></i></a><a href="#「leetcode热题-HOT-100」-96-不同的二叉搜索树" class="headerlink" title="「leetcode热题-HOT-100」-96.不同的二叉搜索树"></a>「leetcode热题-HOT-100」-96.不同的二叉搜索树</h2>
-      <p>给你一个整数 <code>n</code> ，求恰由 <code>n</code> 个节点组成且节点值从 <code>1</code> 到 <code>n</code> 互不相同的 <strong>二叉搜索树</strong> 有多少种？返回满足题意的二叉搜索树的种数。</p></div><div class="post-readmore"><a class="post-readmore__link" href="/2021/10/10/%E3%80%90Leetcode%E7%83%AD%E9%A2%98100%E3%80%91-96-%E4%B8%8D%E5%90%8C%E7%9A%84%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91/"><span class="post-readmore__text">阅读全文</span><span class="post-readmore__icon"><i class="fas fa-long-arrow-alt-right"></i></span></a></div></div></article></section><nav class="paginator"><div class="paginator-inner"><a class="extend prev" rel="prev" href="/page/2/"><i class="fas fa-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/4/"><i class="fas fa-angle-right"></i></a></div></nav></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><section class="sidebar-toc hide"></section><!-- ov = overview--><section class="sidebar-ov"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="https://cdn.jsdelivr.net/gh/Ultraman-Mark/map-depot@master/blog/author.png" alt="avatar"></div><p class="sidebar-ov-author__text">每一天都是新的开始</p></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">83</div><div class="sidebar-ov-state-item__name">归档</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--categories" href="/categories/"><div class="sidebar-ov-state-item__count">6</div><div class="sidebar-ov-state-item__name">分类</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--tags" href="/tags/"><div class="sidebar-ov-state-item__count">33</div><div class="sidebar-ov-state-item__name">标签</div></a></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="知识共享许可协议" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2021</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>Peng Yun Lu</span></div><div><span>由 <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> 强力驱动</span><span> v5.4.0</span><span class="footer__devider">|</span><span>主题 - <a href="https://github.com/liuyib/hexo-theme-stun/" title="Stun" target="_blank" rel="noopener">Stun</a></span><span> v2.6.2</span></div><div class="busuanzi"><span class="busuanzi-siteuv"><span class="busuanzi-siteuv__icon"><i class="fas fa-user"></i></span><span class="busuanzi-siteuv__info">访问人数</span><span class="busuanzi-siteuv__value" id="busuanzi_value_site_uv"></span></span><span class="busuanzi-sitepv"><span class="busuanzi-siteuv__icon"><i class="fas fa-eye"></i></span><span class="busuanzi-siteuv__info">浏览总量</span><span class="busuanzi-siteuv__value" id="busuanzi_value_site_pv"></span></span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><div class="search-mask"></div><div class="search-popup"><span class="search-close"></span><div class="search-input"><input placeholder="搜索文章（支持多关键词，请用空格分隔）"></div><div class="search-results"></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script>function initSearch() {
+<p>给你一个整数 <code>n</code> ，求恰由 <code>n</code> 个节点组成且节点值从 <code>1</code> 到 <code>n</code> 互不相同的 <strong>二叉搜索树</strong> 有多少种？返回满足题意的二叉搜索树的种数。</p></div><div class="post-readmore"><a class="post-readmore__link" href="/2021/10/11/%E3%80%90Leetcode%E7%83%AD%E9%A2%98100%E3%80%91-%E9%94%99%E9%A2%98%E9%9B%86%E5%90%88/"><span class="post-readmore__text">阅读全文</span><span class="post-readmore__icon"><i class="fas fa-long-arrow-alt-right"></i></span></a></div></div></article></section><nav class="paginator"><div class="paginator-inner"><a class="extend prev" rel="prev" href="/page/2/"><i class="fas fa-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/4/"><i class="fas fa-angle-right"></i></a></div></nav></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><section class="sidebar-toc hide"></section><!-- ov = overview--><section class="sidebar-ov"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="https://cdn.jsdelivr.net/gh/Ultraman-Mark/map-depot@master/blog/author.png" alt="avatar"></div><p class="sidebar-ov-author__text">每一天都是新的开始</p></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">84</div><div class="sidebar-ov-state-item__name">归档</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--categories" href="/categories/"><div class="sidebar-ov-state-item__count">6</div><div class="sidebar-ov-state-item__name">分类</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--tags" href="/tags/"><div class="sidebar-ov-state-item__count">34</div><div class="sidebar-ov-state-item__name">标签</div></a></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="知识共享许可协议" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2021</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>Peng Yun Lu</span></div><div><span>由 <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> 强力驱动</span><span> v5.4.0</span><span class="footer__devider">|</span><span>主题 - <a href="https://github.com/liuyib/hexo-theme-stun/" title="Stun" target="_blank" rel="noopener">Stun</a></span><span> v2.6.2</span></div><div class="busuanzi"><span class="busuanzi-siteuv"><span class="busuanzi-siteuv__icon"><i class="fas fa-user"></i></span><span class="busuanzi-siteuv__info">访问人数</span><span class="busuanzi-siteuv__value" id="busuanzi_value_site_uv"></span></span><span class="busuanzi-sitepv"><span class="busuanzi-siteuv__icon"><i class="fas fa-eye"></i></span><span class="busuanzi-siteuv__info">浏览总量</span><span class="busuanzi-siteuv__value" id="busuanzi_value_site_pv"></span></span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><div class="search-mask"></div><div class="search-popup"><span class="search-close"></span><div class="search-input"><input placeholder="搜索文章（支持多关键词，请用空格分隔）"></div><div class="search-results"></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script>function initSearch() {
   var isXML = true;
   var search_path = 'search.json';
 
